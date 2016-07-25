@@ -7,4 +7,4 @@ class Receipt{
     }
 }
 
-mudule.exports = Receipt;
+module.exports = Receipt;
