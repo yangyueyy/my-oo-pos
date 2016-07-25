@@ -1,4 +1,3 @@
-const fixture = require('./fixtures');
 const Item = require('./models/item');
 const Promotion = require('./models/promotion');
 const CartItem = require('./models/cart-item');
