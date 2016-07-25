@@ -13,8 +13,6 @@ class Receipt {
         this.receiptItems = receiptItems;
         this.savedTotal = savedTotal;
         this.total = total;
-
-
     }
 
     buildText() {
@@ -39,13 +37,6 @@ ${receiptItemsText}
 **********************`;
     }
 
-
-    static buildReceipt(receiptItems) {
-
-
-
-        return new Receipt(receiptItems, savedTotal, total);
-    }
 }
 
 module.exports = Receipt;
