@@ -6,6 +6,26 @@ class ReceiptItem {
         this.subtotal = subtotal;
     }
 
+    getName() {
+        return this.cartItem.getName();
+    }
+
+    getBarcode() {
+        return this.cartItem.getBarcode();
+    }
+
+    getUnit() {
+        return this.cartItem.getUnit();
+    }
+
+    getPrice() {
+        return this.cartItem.getPrice();
+    }
+
+    getCount() {
+        return this.cartItem.count;
+    }
+
     static buildReceiptItems(cartItems, allPromotions) {
 
         const discount = (count, price, promotionType) => {
@@ -20,14 +40,14 @@ class ReceiptItem {
             subtotal -= saved;
 
             return {saved, subtotal};
-        }
+        };
 
         const findPromotionType = (barcode, promotions) => {
 
             const promotion = promotions.find(promotion => promotion.barcodes.some(b => b === barcode));
 
             return promotion ? promotion.type : undefined;
-        }
+        };
         return cartItems.map(cartItem => {
 
             const promotionType = findPromotionType(cartItem.getBarcode(), allPromotions);
